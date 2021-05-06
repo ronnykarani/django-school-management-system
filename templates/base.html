@@ -22,26 +22,6 @@
   <link
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
     rel="stylesheet">
-    <style>
-      .app-footer 
-      {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: 0 1rem;
-      color: #151b1e;
-      background: #f0f3f5;
-      border-top: 1px solid #c2cfd6; 
-    }
-      .app-footer 
-      {
-      -ms-flex: 0 0 50px;
-      flex: 0 0 50px;
-    }
-    </style>
 </head>
 
 <body
@@ -79,7 +59,7 @@
             </a>-->
             <div class="dropdown-divider"></div>
             <a href="{% url 'logout' %}" class="dropdown-item">
-              <i class="fas fa-sign-out"></i> Log out
+              <i class="fas fa-unlock"></i> Log out
             </a>
           </div>
         </li>
@@ -91,7 +71,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="{% url 'home' %}" class="brand-link"><strong> Kivingoni School</strong></a>
+      <a href="{% url 'home' %}" class="brand-link"><strong> KIVINGONI SCHOOL</strong></a>
 
       <!-- Sidebar -->
       <div class="sidebar">
@@ -198,15 +178,13 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="{% url 'configs' %}" class="nav-link">
+              <!--<a href="{% url 'configs' %}" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>
                 <p>
                   Settings
                 </p>
               </a>
-            </li>
-
-
+            </li>-->
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -258,15 +236,6 @@
           <!-- /.row -->
         </div>
         <!--/. container-fluid -->
-        <footer class="app-footer">
-          <span>
-              All rights reserved |
-              <a href="#"> &nbsp;  KIVINGONI SCHOOL</a>
-              &copy; <script>document.write(new Date().getFullYear()); </script> 
-          </span> 
-          &nbsp;
-          <span class="ml-auto"> This system was developed by <a href="https://www.github.com/ronnykarani">Ronny Karani</a></span>
-      </footer>
       </section>
       <!-- /.content -->
     </div>

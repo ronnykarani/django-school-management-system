@@ -32,7 +32,7 @@ class Student(models.Model):
 
   address               = models.TextField(blank=True)
   others                = models.TextField(blank=True)
-  passport              = models.ImageField(blank=True, upload_to='students/passports/')  
+  passport              = models.ImageField(blank=True, upload_to='passports/')  
 
   class Meta:
     ordering = ['surname', 'firstname', 'other_name']
@@ -46,4 +46,4 @@ class Student(models.Model):
 
 class StudentBulkUpload(models.Model):
   date_uploaded       = models.DateTimeField(auto_now=True)
-  csv_file            = models.FileField(upload_to='students/bulkupload/')
+  csv_file            = models.FileField(upload_to='bulkupload/students/')

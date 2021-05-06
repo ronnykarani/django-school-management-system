@@ -27,7 +27,7 @@ class Staff(models.Model):
   
   address             = models.TextField(blank=True)
   others              = models.TextField(blank=True)
-  passport              = models.ImageField(blank=True, upload_to='staff/passports/')  
+  passport              = models.ImageField(blank=True, upload_to='passports/')  
 
   def __str__(self):
     return f'{self.surname} {self.firstname} {self.other_name}'

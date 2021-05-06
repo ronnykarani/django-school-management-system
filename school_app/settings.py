@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'apps.staffs',
     'apps.finance',
     'apps.result',
-    'apps.users',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -113,48 +113,40 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
-
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#media files settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = '/'
 
+#User authentication and authorization
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
-
+#session settings
 SESSION_SAVE_EVERY_REQUEST = True
-
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
 SESSION_COOKIE_AGE = 10800
 
 
+#logging settings
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

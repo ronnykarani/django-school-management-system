@@ -2,7 +2,7 @@
 {% load static %}
 {% load widget_tweaks %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block content %}
   <form class="login100-form validate-form" method="post" action="{% url 'login' %}">
@@ -10,12 +10,12 @@
     <span class="login100-form-title">
       <strong>KIVINGONI SCHOOL</strong>
     </span>
-    <br>
-    <h5 class="modal-title" style="margin: 0 auto;">LOGIN</h5>
+    <h5 class="modal-title" style="margin: 0 auto;">REGISTER</h5>
     <span class="error-msg"> 
         {% if form.errors %}
-        <p class="error-msg">Your username and password didn't match any in our records. Please try again.</p>
+        <p class="error-msg">Your password didn't match. Please try again.</p>
         {% endif %}
+
         {% if next %}
         {% if user.is_authenticated %}
         <p class="error-msg"> Your account doesn't have access to this page. To proceed,
@@ -53,20 +53,20 @@
     <div class="text-center p-t-12">
       <strong>
         <span class="txt1">
-            Don,t have an account?
+            Already have an account?
         </span>
-        <a class="txt2" href="{% url 'signup' %}">
-            Register here!
+        <a class="txt2" href="{% url 'login' %}">
+            Login here.
         </a>
       </strong>
-  </div>
+    </div>
 
     <div class="text-center p-t-12">
       <strong>
         <span class="txt1">
-            Forgot your
+            Forgot
         </span>
-        <a class="txt2" href="#">
+        <a class="txt2" href="signup.html">
             Password?
         </a>
       </strong>

@@ -48,13 +48,13 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <!-- Notifications Dropdown Menu 
+        <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
             {% if request.user.userprofile %}
-              <img src="{{ request.user.userprofile.photo.url }}" class="rounded-circle" alt="admin">
+              <img src="{{ request.user.userprofile.photo.url }}" class="rounded-circle mr-3" style="border-radius: 50em; width:36px; height:36px;"  alt="admin">
             {% else %}
-              <img src="{% static 'dist/img/avatar.png' %}" class="rounded-circle" alt="Anynumos">
+              <img src="{% static 'dist/img/avatar.png' %}" class="rounded-circle mr-3"  style="border-radius: 50em; width:36px; height:36px;"  alt="Anynumos">
             {% endif %}
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -62,16 +62,16 @@
               <i class="fas fa-user mr-2"></i> Profile
             </a>
             <div class="dropdown-divider"></div>
-            <a href="{% url 'update-profile' %}" class="dropdown-item">
+            <!--<a href="{% url 'update-profile' %}" class="dropdown-item">
               <i class="fas fa-wrench"></i> Settings
-            </a>
+            </a>-->
             <div class="dropdown-divider"></div>
             <a href="{% url 'logout' %}" class="dropdown-item">
               <i class="fas fa-unlock"></i> Log out
             </a>
           </div>
         </li>
-      </ul>-->
+      </ul>
     </nav>
     <!-- /.navbar -->
 

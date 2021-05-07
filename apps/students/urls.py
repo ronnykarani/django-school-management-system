@@ -11,5 +11,4 @@ urlpatterns = [
 
   path('upload/', StudentBulkUploadView.as_view(), name='student-upload'),
   path('downloadcsv/', downloadcsv, name='download-csv'),
-
 ]

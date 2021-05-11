@@ -1,19 +1,12 @@
 from django.shortcuts import render, redirect
-#from django.urls import reverse_lazy
-#from django.views import generic
-from .models import UserProfile
+from .models import Profile
 from .forms import ProfileForm
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-'''
-class SignUpView(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'registration/signup.html'
-'''
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -27,16 +20,17 @@ def register(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
+@login_required
 def profile(request):
-    profile = UserProfile.objects.filter(id=request.user.id).first()
+    profile = Profile.objects.filter(id=request.user.id).first()
     context = {
         'profile': profile
     }
-    return render(request, 'accounts/profile.html', context)
+    return render(request, 'registration/profile.html', context)
 
 
 def update_profile(request):
-    profile = UserProfile.objects.filter(id=request.user.id).first()
+    profile = Profile.objects.filter(id=request.user.id).first()
     forms = ProfileForm(instance=profile)
     if request.method == 'POST':
         forms = ProfileForm(request.POST, request.FILES, instance=profile)
@@ -49,4 +43,4 @@ def update_profile(request):
     context = {
         'forms': forms
     }
-    return render(request, 'accounts/update-profile.html', context)
+    return render(request, 'registration/update-profile.html', context)

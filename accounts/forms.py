@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import fields
-from .models import UserProfile
+from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -14,9 +14,9 @@ class UserRegisterForm(UserCreationForm):
 
 class ProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = ['name', 'photo']
+        model = Profile
+        fields = ['user', 'image']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'photo': forms.FileInput(attrs={'class': 'form-control'}),
+            'user': forms.TextInput(attrs={'class': 'form-control'}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
         }

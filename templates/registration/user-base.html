@@ -38,7 +38,13 @@
             <div class="login100-pic js-tilt" style="width: 400px;">
                 <img src="{% static 'dist/img/login.png' %}">
             </div>
-
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
             {% block content %}
             {% endblock content %}
           </div>

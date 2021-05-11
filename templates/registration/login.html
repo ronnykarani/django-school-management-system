@@ -13,20 +13,6 @@
     <br>
     <h5 class="modal-title" style="margin: 0 auto;">LOGIN</h5>
     &nbsp;
-    <span class="error-msg"> 
-        {% if form.errors %}
-        <p class="error-msg">Your username and password didn't match any in our records. Please try again.</p>
-        {% endif %}
-        {% if next %}
-        {% if user.is_authenticated %}
-        <p class="error-msg"> Your account doesn't have access to this page. To proceed,
-          please login with an account that has access.</p>
-        {% else %}
-        </span>
-        <p>Please Login </p>
-        {% endif %}
-        {% endif %}
-    </span>
     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
         <input class="input100" id="id_username" name="username" 
         type="text" placeholder="Username">
@@ -57,7 +43,7 @@
             Don,t have an account?
         </span>
         &nbsp;
-        <a class="txt2" href="{% url 'signup' %}">
+        <a class="txt2" href="{% url 'register' %}">
             Register here.
         </a>
       </strong>

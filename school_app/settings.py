@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'widget_tweaks',
+    #'crispy-forms',
     'apps.corecode',
     'apps.students',
     'apps.staffs',
@@ -144,7 +145,6 @@ LOGOUT_REDIRECT_URL = '/'
 # send mail Local settings(development)
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = str(BASE_DIR.join('sent_emails'))
-
 '''EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 EMAIL_HOST_USER = ''
@@ -157,6 +157,8 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 10800
 
+#crispy forms
+CRISPY_TEMPLATE_PACK='bootstrap4',
 
 #logging settings
 LOGGING = {

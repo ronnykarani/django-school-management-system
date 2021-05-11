@@ -34,6 +34,7 @@ def profile(request):
     }
     return render(request, 'accounts/profile.html', context)
 
+
 def update_profile(request):
     profile = UserProfile.objects.filter(id=request.user.id).first()
     forms = ProfileForm(instance=profile)

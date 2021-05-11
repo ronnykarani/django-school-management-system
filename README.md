@@ -10,7 +10,7 @@ It currently doesn't allow students/staff to login.
 Solely, it's expected to be used on a single machine or online for managers only.
 
 ## Demo
-Visit https://django-school-app.herokuapp.com/ for a live demo. The demo is updated whenever the demo branch code is updated.
+code is updated often
 ```bash
 username: admin
 password: admin123

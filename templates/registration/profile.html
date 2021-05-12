@@ -15,8 +15,21 @@
         <hr>
         <div class="row">
             <div style="font-size:24px; margin-left: 30px">
-                <pre>Name:        {{ user.username }}</pre>
-                <pre>Email:       {{ user.email}}</pre>
+                <form enctype="multipart/form-data" class="login100-form validate-form" method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="wrap-input100">
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4"><strong>Profile Info</strong> </legend>
+                            {{ u_form.as_p }}
+                            {{ p_form.as_p }}
+                        </fieldset>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button class="btn btn-success" type="submit" value="Update">
+                            Update
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

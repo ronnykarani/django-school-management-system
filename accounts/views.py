@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Profile
-from .forms import ProfileForm
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -22,25 +21,19 @@ def register(request):
 
 @login_required
 def profile(request):
-    profile = Profile.objects.filter(id=request.user.id).first()
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST,  instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,  request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and u_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Account profile updated successfully!')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
     context = {
-        'profile': profile
+        'u_form': u_form,
+        'p_form': p_form
     }
     return render(request, 'registration/profile.html', context)
-
-
-def update_profile(request):
-    profile = Profile.objects.filter(id=request.user.id).first()
-    forms = ProfileForm(instance=profile)
-    if request.method == 'POST':
-        forms = ProfileForm(request.POST, request.FILES, instance=profile)
-        if forms.is_valid():
-            forms = forms.save(commit=False)
-            forms.user = request.user
-            forms.save()
-            messages.success(request, f'Account updated!')
-            return redirect('profile')
-    context = {
-        'forms': forms
-    }
-    return render(request, 'registration/update-profile.html', context)

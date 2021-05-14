@@ -142,24 +142,27 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 #LOGOUT_REDIRECT_URL = '/'
 
+
 # email settings
 # send mail Local settings(development)
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = str(BASE_DIR.join('sent_emails'))
-'''EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = False'''
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# send mail Deployment settings
+'''EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'karanironny25@gmail.com'
+EMAIL_HOST_PASSWORD = '@Karani254'
+EMAIL_USE_TLS = True'''
+
 
 #session settings
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 10800
 
+
 #crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 #logging settings
 LOGGING = {
@@ -192,4 +195,3 @@ LOGGING = {
     },
 }
 
-# Site Default values

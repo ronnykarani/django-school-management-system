@@ -140,7 +140,7 @@ MEDIA_URL = '/media/'
 
 #User authentication and authorization
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+#LOGOUT_REDIRECT_URL = '/'
 
 # email settings
 # send mail Local settings(development)
@@ -159,7 +159,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 10800
 
 #crispy forms
-CRISPY_TEMPLATE_PACK='bootstrap4',
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #logging settings
 LOGGING = {

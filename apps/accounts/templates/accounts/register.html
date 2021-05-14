@@ -1,0 +1,49 @@
+{% extends 'accounts/user-base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <form class="login100-form validate-form" method="post" action="">
+        {% csrf_token %}
+        <span class="login100-form-title">
+            <strong>KIVINGONI SCHOOL</strong>
+        </span>
+        <div class="wrap-input100">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> REGISTER</legend>
+                {{ form|crispy }}
+            </fieldset>
+        </div>
+
+        <div class="container-login100-form-btn">
+            <button class="login100-form-btn" type="submit" value="Sign Up">
+                Sign Up 
+            </button>
+        </div>
+
+        <div class="text-center p-t-12">
+            <strong>
+                <span class="txt1">
+                    Already have an account?
+                </span>
+                &nbsp;
+                <a class="txt2" style="color:blue;" href="{% url 'login' %}">
+                    Login.
+                </a>
+            </strong>
+        </div>
+    
+        <div class="text-center p-t-12">
+            <strong>
+                <span class="txt1">
+                    Forgot
+                </span>
+                <a class="txt2" style="color:blue;" href="#">
+                    Password?
+                </a>
+            </strong>
+        </div>
+    </form>
+{% endblock %}

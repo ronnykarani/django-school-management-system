@@ -1,0 +1,24 @@
+{% extends 'accounts/user-base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+    <form class="login100-form validate-form" method="post" action="">
+        {% csrf_token %}
+        <span class="login100-form-title">
+            <strong>KIVINGONI SCHOOL</strong>
+        </span>
+        <div class="text-center p-t-12">
+            <strong>
+                <span class="txt1">
+                    You have logged out!
+                </span>
+                <br>
+                <p>Click here to<a class="txt2" style="color:blue;" href="{% url 'login' %}">
+                    Login. 
+                </a></p>
+            </strong>
+        </div>
+    </form>
+{% endblock %}

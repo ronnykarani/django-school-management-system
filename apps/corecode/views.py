@@ -10,9 +10,10 @@ from django.urls import reverse_lazy
 from .models import SiteConfig, AcademicSession, AcademicTerm, StudentClass, Subject
 from .forms import SiteConfigForm, AcademicTermForm, AcademicSessionForm, StudentClassForm, SubjectForm, CurrentSessionForm
 
-class IndexView(LoginRequiredMixin, TemplateView):
-      template_name = 'index.html'
 
+
+class IndexView(LoginRequiredMixin, TemplateView):
+      template_name = 'index.html' 
 
 @login_required
 def siteconfig_view(request):

@@ -32,7 +32,7 @@ class Student(models.Model):
 
   address               = models.TextField(blank=True)
   others                = models.TextField(blank=True)
-  passport              = models.ImageField(blank=True, upload_to='passports/')  
+  passport              = models.ImageField(blank=True, upload_to='students/passports/')  
 
   class Meta:
     ordering = ['surname', 'firstname', 'other_name']
